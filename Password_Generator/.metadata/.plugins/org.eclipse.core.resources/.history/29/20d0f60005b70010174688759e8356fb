@@ -1,7 +1,0 @@
-package com.password.generator;
-
-public interface HelloRepo {
-
-	String Hello();
-
-}

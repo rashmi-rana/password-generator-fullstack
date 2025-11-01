@@ -1,7 +1,0 @@
-package com.password.generator;
-
-public interface PasswordService {
-
-	String generatePassword(String name);
-
-}

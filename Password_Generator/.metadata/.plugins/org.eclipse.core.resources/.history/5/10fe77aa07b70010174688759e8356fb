@@ -1,7 +1,0 @@
-package com.password.generator;
-
-public interface PasswordService {
-
-	String generatePassword(int length, boolean upper, boolean lower, boolean number, boolean symbol);
-
-}
