@@ -1,0 +1,27 @@
+package com.password.generator;
+
+import com.password.generator.PasswordService;
+import org.springframework.web.bind.annotation.*;
+
+@CrossOrigin(origins = "http://localhost:3000")  // allow React frontend
+@RestController
+@RequestMapping("/api/password")
+public class PasswordController {
+
+    private final PasswordService passwordService;
+
+    public PasswordController(PasswordService passwordService) {
+        this.passwordService = passwordService;
+    }
+
+    @GetMapping("/generate")
+    public String generate(
+            @RequestParam int length,
+            @RequestParam boolean upper,
+            @RequestParam boolean lower,
+            @RequestParam boolean number,
+            @RequestParam boolean symbol) {
+
+        return passwordService.generatePassword(length, upper, lower, number, symbol);
+    }
+}

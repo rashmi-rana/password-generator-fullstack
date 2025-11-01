@@ -1,0 +1,19 @@
+package com.example.passwordgenerator.controller;
+
+import org.springframework.web.bind.annotation.*;
+import com.example.passwordgenerator.service.PasswordService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@RestController
+@RequestMapping("/api/password")
+@CrossOrigin(origins = "http://localhost:3000")
+public class PasswordController {
+
+    @Autowired
+    private PasswordService passwordService;
+
+    @GetMapping("/generate")
+    public String generatePassword(@RequestParam String name) {
+        return passwordService.generatePassword(name);
+    }
+}

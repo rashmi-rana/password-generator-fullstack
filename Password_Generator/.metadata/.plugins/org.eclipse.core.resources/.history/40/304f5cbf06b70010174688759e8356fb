@@ -1,0 +1,14 @@
+package com.password.generator;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class PasswordServiceImpl implements PasswordService{
+
+	@Override
+	public String generatePassword(int length, boolean upper, boolean lower, boolean number, boolean symbol) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

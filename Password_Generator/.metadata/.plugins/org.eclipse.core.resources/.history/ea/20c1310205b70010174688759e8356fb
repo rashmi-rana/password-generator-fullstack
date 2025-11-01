@@ -1,0 +1,14 @@
+package com.password.generator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class HelloServiceImpl implements HelloService {
+
+	@Autowired
+	HelloRepo helloRepo;
+	@Override
+	public String Hello() {
+		return 
+	}
+
+}

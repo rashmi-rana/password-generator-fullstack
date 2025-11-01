@@ -1,0 +1,30 @@
+package com.password.generator;
+
+import java.security.SecureRandom;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PasswordServiceImpl implements PasswordService {
+
+	@Override
+    public String generatePassword(String name) {
+        String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lower = "abcdefghijklmnopqrstuvwxyz";
+        String digits = "0123456789";
+        String symbols = "!@#$%^&*()-_=+<>?";
+
+        String allChars = upper + lower + digits + symbols;
+        SecureRandom random = new SecureRandom();
+
+        StringBuilder password = new StringBuilder();
+
+        // ✅ Add the entire name
+        password.append(name);
+
+        // ✅ Add 7 random characters for extra security
+        for (int i = 0; i < 7; i++) {
+            password.append(allChars.charAt(random.nextInt(allChars.length())));
+        }
+
+        return password.toString();
+}

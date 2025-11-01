@@ -1,0 +1,9 @@
+package com.password.generator;
+
+public interface HelloService  {
+
+	String Hello();
+
+
+
+}

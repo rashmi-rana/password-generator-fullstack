@@ -1,0 +1,10 @@
+package com.password.generator;
+
+public class HelloRepoImpl implements HelloRepo {
+
+	@Override
+	public String Hello() {
+		return "Hello Rashmi";
+	}
+
+}
